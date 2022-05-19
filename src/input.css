@@ -12,4 +12,8 @@
         font-family: 'GaretBook';
         src: url("/fonts/Garet-Book.ttf")
     }
+
+    .place-shadow {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
