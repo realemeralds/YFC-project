@@ -8,12 +8,25 @@
         font-family: 'AdelicaBrush';
         src: url("/fonts/Adelica Brush.ttf")
     }
+
     @font-face {
         font-family: 'GaretBook';
         src: url("/fonts/Garet-Book.ttf")
     }
 
+
     .place-shadow {
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .sr-hidden {
+        visibility: hidden;
+    }
+    .hover-animation::before {
+        inset: 0 100% 0 0;
+        transition: right 0.6s;
+        transition-timing-function: ease-in;
+        background-color: #475569;
+        left: 20px;
     }
 }
