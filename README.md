@@ -3,8 +3,8 @@
 
 # TODO LIST 😞
 * no. 1 prio: get html canvas to work for the place thing
-* about us animations
-* programs animations
+* about us animations (done!)
+* programs animations -> use the peer thing to have a moveable active thing
 * remove placeholders and put in actual images
 
 ## 🖨️ Requirements:

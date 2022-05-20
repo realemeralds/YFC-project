@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <title>YFC Project</title>
     <link rel="stylesheet" href="../dist/output.css">
+    <script src="./scripts/placecanvas.js"></script>
 </head>
 <body class="h-[calc(100vh-72px)]">
     <nav class="sticky z-50 py-4 px-10 left-0 right-0 top-0 flex justify-between items-center bg-white">
@@ -16,15 +17,16 @@
             <h1 class="font-serif text-4xl font-semibold">Youth-For-Causes 2022</h1>
         </a>
         <div class="justify-between flex-row flex space-x-[69px]">
-            <a class="font-cursive text-black text-2xl" href="./subpages/aboutus.html">programs</a>
-            <a class="font-cursive text-black text-2xl" href="./subpages/programs.html">about us</a>
-            <a class="font-cursive text-black text-2xl" href="./subpages/">merch</a>
-            <a class="font-cursive text-black text-2xl" href="./subpages/">donate</a>
+            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/aboutus.html">about us</a>
+            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/programs.html">programs</a>
+            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/">merch</a>
+            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/">donate</a>
         </div>
     </nav>
     <div class="z-0 bg-slate-300 w-full h-full flex items-center justify-center relative">
-        <div class="bg-white w-125 h-125 place-shadow">
-        </div>
+        <canvas id="canvas" class="w-125 h-125 z-10"></canvas>
+        <!-- <div class="bg-white w-[516px] h-[516px] p-2 place-shadow grid grid-rows-[repeat(100,_minmax(0,_1fr))] grid-cols-[repeat(100,_minmax(0,_1fr))]">
+        </div> -->
     </div>
 </body>
 </html>
