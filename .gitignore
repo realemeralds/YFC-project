@@ -2,4 +2,6 @@
 **/env
 .vscode
 requirements.txt
+*.json
+*.txt
 
