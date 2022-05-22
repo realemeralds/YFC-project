@@ -17,7 +17,12 @@ window.addEventListener("load", () => {
   var mouseOnCanvas = false;
   breakButton.disabled = true
   cancelButton.disabled = true
-  var clearRectArray = []
+
+  var clearRectArray = JSON.parse(localStorage.getItem('clearRectArray'))
+  console.log(clearRectArray)
+  clearRectArray ? () => {} : clearRectArray = []
+
+  // var clearRectArray = []
 
   // Create a grey box when mousing over boxes
   // @param x: center x-coord of pixel
@@ -110,7 +115,7 @@ window.addEventListener("load", () => {
       overlaypos.x = pos.x - (pos.x % 10) + 1;
       overlaypos.y = pos.y - (pos.y % 10) + 1;
       mouseOnCanvas = true
-      console.log(overlaypos)
+      // console.log(overlaypos)
     } else {
       pos.x = undefined;
       pos.y = undefined;
@@ -141,6 +146,8 @@ window.addEventListener("load", () => {
   breakButton.addEventListener("click", () => {
     clearRectArray.push([selectpos.x, selectpos.y])
     ctx.clearRect(selectpos.x, selectpos.y, 10, 10)
+    localStorage.setItem('clearRectArray', JSON.stringify(clearRectArray))
+    console.log(localStorage.getItem('clearRectArray'))
     selectpos.x = undefined
     selectpos.y = undefined
   })

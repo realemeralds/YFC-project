@@ -8,7 +8,6 @@
         font-family: 'AdelicaBrush';
         src: url("/fonts/Adelica Brush.ttf")
     }
-
     @font-face {
         font-family: 'GaretBook';
         src: url("/fonts/Garet-Book.ttf")
@@ -28,5 +27,15 @@
         transition-timing-function: ease-in;
         background-color: #475569;
         left: 20px;
+    }
+    .transition-right {
+        transition: left 500ms cubic-bezier(.5,1,.88,1.04) 50ms, right 500ms cubic-bezier(.5,1,.88,1.04);
+    }
+    .transition-left {
+        transition: left 500ms cubic-bezier(.5,1,.88,1.04), right 500ms cubic-bezier(.5,1,.88,1.04) 50ms;
+    }
+
+    .transition {
+        transition: transform 1600ms cubic-bezier(.5,1,.88,1.04)
     }
 }

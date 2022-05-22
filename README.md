@@ -1,16 +1,16 @@
 # YFC-project
 👋 youth for causes project 👋
+Will be using flask for online integration, but basic local functionality done already.
+non-minified css available at `src/output.css`
 
 # TODO LIST 😞
-* no. 1 prio: get html canvas to work for the place thing
-* about us animations (done!)
-* programs animations -> use the peer thing to have a moveable active thing
 * remove placeholders and put in actual images
+* carousell fade out, fix for spammers
 
 ## 🖨️ Requirements:
-Required python libraries are included in `requirements.txt`
+**Node.js packages:** postcss-import, autoprefixer and tailwindcss _(see **for npm libraries** section)_
 
-*To install*
+*To install (note: no need yet)*
 ```
 pip install -r requirements.txt
 ```

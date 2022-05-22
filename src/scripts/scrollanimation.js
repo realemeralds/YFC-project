@@ -4,7 +4,7 @@ const sr = ScrollReveal(
         delay: 300,
         distance: '50px',
         opacity: 0,
-        duration: 1000,
+        duration: 2000,
     }
 );
 

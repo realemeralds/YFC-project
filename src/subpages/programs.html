@@ -9,45 +9,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <title>YFC Project</title>
     <link rel="stylesheet" href="../../dist/output.css">
+    <script src="../scripts/lineanimation.js"></script>
+    <script src="../scripts/bodysize.js"></script>
 </head>
-<body class="h-[calc(100vh-72px)]">
-    <nav class="fixed z-50 py-4 px-10 left-0 right-0 top-0 flex justify-between items-center bg-white">
+<body class="h-[calc(100vh-72px)] overflow-hidden">
+    <nav class="sticky z-50 py-4 px-10 left-0 right-0 top-0 flex justify-between items-center bg-white">
         <a href="../index.html">
             <h1 class="font-serif text-4xl font-semibold">Youth-For-Causes 2022</h1>
         </a>
-        <div class="justify-between flex-row flex space-x-[69px]">
-            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./aboutus.html">about us</a>
-            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./programs.html">programs</a>
-            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./">merch</a>
-            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./">donate</a>
+        <div class="justify-between flex-row flex space-x-[54px]">
+            <a class="font-cursive text-black text-xl hover:text-slate-700" href="../index.html">home</a>
+            <a class="font-cursive text-black text-xl hover:text-slate-700" href="./aboutus.html">about us</a>
+            <a class="font-cursive text-black text-xl hover:text-slate-700"
+                href="./programs.html">programs</a>
+            <a class="font-cursive text-black text-xl hover:text-slate-700" href="./../index.html">merch</a>
+            <a class="font-cursive text-black text-xl hover:text-slate-700" href="./../index.html">donate</a>
         </div>
     </nav>
 
-    <div class="z-0 bg-slate-300 space-x-[5vw] w-full h-full mt-[72px] flex items-center justify-center relative px-[10vw]">
-        <div class="flex flex-col ml-4">
-            <button class="flex flex-row space-x-2 my-2 transition-all duration-300 group">
-                <div class="rounded-full py-2 px-3 group-focus:bg-slate-400">
-                    <p class="font-garet text-5xl min-w-fit pl-1 relative">Clay Workshop</p>
-                </div>
-            </button>
-            <button class="flex flex-row space-x-2 my-2 py-2 group transition-all duration-300">
-                <div class="rounded-full py-2 px-3 group-focus:bg-slate-400">
-                    <p class="font-garet text-5xl min-w-fit pl-1 relative">Bake Sale</p>
-                </div>
-            </button>
-            <button class="flex flex-row space-x-2 my-2 py-2 group transition-all duration-300">
-                <div class="rounded-full py-2 px-3 group-focus:bg-slate-400">
-                    <p class="font-garet text-5xl min-w-fit pl-1 relative">Busking</p>
-                </div>
-            </button>
-            <button class="flex flex-row space-x-2 my-2 py-2 group transition-all duration-300">
-                <div class="rounded-full py-2 px-3 group-focus:bg-slate-400">
-                    <p class="font-garet text-5xl min-w-fit px-1 relative">Lettle Jumble Challenge</p>
-                </div>
-            </button>
+    <div class="z-0 bg-slate-300 h-full flex flex-col items-center relative pt-[60px] w-full px-[calc(50%-450px)]">
+        <h1 class="text-center font-serif font-semibold text-6xl text-black w-full">Programs</h1>
+        <div class="flex flex-row px-3 bg-stone-200 mt-5 rounded-3xl relative" id="parent">
+            <button class="font-garet px-5 pt-5 pb-4 text-black text-2xl">Clay Workshop</button>
+            <button class="font-garet px-5 pt-5 pb-4 text-black text-2xl">Bake Sale</button>
+            <button class="font-garet px-5 pt-5 pb-4 text-black text-2xl">Busking</button>
+            <button class="font-garet px-5 pt-5 pb-4 text-black text-2xl">Letter Jumble Challenge</button>
+            <div class="bg-green h-1 absolute bottom-[1px] transition-left" id="animatedline"></div>
         </div>
-        <div class="bg-white w-125 h-125 place-shadow">
+
+        <div class="flex flex-row space-x-10 items-center mt-10 transition" id="firstContent">
+            <img src="../../assets/placeholderpolygon.svg" alt="" class="w-96 h-96 transition-opacity">
+            <p class="font-serif text-2xl text-center relative bottom-3">FIRST Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, pariatur. Minima amet perferendis quos quas deserunt, alias quasi quod molestias distinctio totam illo vitae odit error repellat saepe consequuntur asperiores laboriosam laudantium voluptates fugit! Eius, perspiciatis nisi! Sequi, perferendis officiis.</p>
+        </div>
+        <div class="flex flex-row space-x-10 items-center -translate-y-[384px] -translate-x-[calc(50vw+600px)] transition-opacity" id="secondContent">
+            <p class="font-serif text-2xl text-center relative bottom-3">SECOND Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, pariatur. Minima amet perferendis quos quas deserunt, alias quasi quod molestias distinctio totam illo vitae odit error repellat saepe consequuntur asperiores laboriosam laudantium voluptates fugit! Eius, perspiciatis nisi! Sequi, perferendis officiis.</p>
+            <img src="../../assets/placeholderpolygon.svg" alt="" class="w-96 h-96">
+        </div>
+        <div class="flex flex-row space-x-10 items-center -translate-y-[768px] -translate-x-[calc(50vw+600px)] transition-opacity" id="thirdContent">
+            <img src="../../assets/placeholderpolygon.svg" alt="" class="w-96 h-96">
+            <p class="font-serif text-2xl text-center relative bottom-3">THIRD Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, pariatur. Minima amet perferendis quos quas deserunt, alias quasi quod molestias distinctio totam illo vitae odit error repellat saepe consequuntur asperiores laboriosam laudantium voluptates fugit! Eius, perspiciatis nisi! Sequi, perferendis officiis.</p>
+        </div>
+        <div class="flex flex-row space-x-10 items-center -translate-y-[calc(384px*3)] -translate-x-[calc(50vw+600px)] transition-opacity" id="fourthContent">
+            <p class="font-serif text-2xl text-center relative bottom-3">FOURTH Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, pariatur. Minima amet perferendis quos quas deserunt, alias quasi quod molestias distinctio totam illo vitae odit error repellat saepe consequuntur asperiores laboriosam laudantium voluptates fugit! Eius, perspiciatis nisi! Sequi, perferendis officiis.</p>
+            <img src="../../assets/placeholderpolygon.svg" alt="" class="w-96 h-96">
         </div>
     </div>
+
 </body>
 </html>
