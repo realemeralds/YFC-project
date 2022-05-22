@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-easings": "^3.0.1",
+    "postcss-import": "^14.1.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  },
+  "name": "yfc-project",
+  "description": "👋 youth for causes project 👋\r Will be using flask for online integration, but basic local functionality done already.\r non-minified css available at `src/output.css`",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realemeralds/YFC-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realemeralds/YFC-project/issues"
+  },
+  "homepage": "https://github.com/realemeralds/YFC-project#readme"
+}
