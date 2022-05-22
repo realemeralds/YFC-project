@@ -6,11 +6,11 @@
     /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap'); */
     @font-face {
         font-family: 'AdelicaBrush';
-        src: url("/fonts/Adelica Brush.ttf")
+        src: url("../fonts/Adelica Brush.ttf")
     }
     @font-face {
         font-family: 'GaretBook';
-        src: url("/fonts/Garet-Book.ttf")
+        src: url("../fonts/Garet-Book.ttf")
     }
 
 
