@@ -13,6 +13,12 @@ module.exports = {
         '131': '524px',
         'general': '13vw'
       },
+      colors: {
+        'green': {
+          DEFAULT: '#00A76A'
+        },
+        'disabled': '#DBDBDB'
+      }
     },
   },
   plugins: [],

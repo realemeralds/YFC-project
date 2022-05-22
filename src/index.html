@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head class="overflow-y-hidden h-screen">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <title>YFC Project</title>
     <link rel="stylesheet" href="../dist/output.css">
     <script src="./scripts/placecanvas.js"></script>
+    <script src="https://kit.fontawesome.com/51ffbc52bc.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-[calc(100vh-72px)]">
+
+<body class="h-[calc(100vh-72px)] bg-slate-300">
     <nav class="sticky z-50 py-4 px-10 left-0 right-0 top-0 flex justify-between items-center bg-white">
         <a href="#">
             <h1 class="font-serif text-4xl font-semibold">Youth-For-Causes 2022</h1>
         </a>
         <div class="justify-between flex-row flex space-x-[69px]">
             <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/aboutus.html">about us</a>
-            <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/programs.html">programs</a>
+            <a class="font-cursive text-black text-2xl hover:text-slate-700"
+                href="./subpages/programs.html">programs</a>
             <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/">merch</a>
             <a class="font-cursive text-black text-2xl hover:text-slate-700" href="./subpages/">donate</a>
         </div>
     </nav>
-    <div class="z-0 bg-slate-300 w-full h-full flex items-center justify-center relative">
-        <canvas id="canvas" class="w-125 h-125 z-10"></canvas>
-        <!-- <div class="bg-white w-[516px] h-[516px] p-2 place-shadow grid grid-rows-[repeat(100,_minmax(0,_1fr))] grid-cols-[repeat(100,_minmax(0,_1fr))]">
-        </div> -->
+    <canvas id="canvas"
+        class="z-0 top-1/2 left-1/2 w-[502px] h-[502px] -translate-x-[251px] -translate-y-[251px] absolute"></canvas>
+    <canvas id="canvas"
+        class="z-10 top-1/2 left-1/2 w-[502px] h-[502px] -translate-x-[251px] -translate-y-[251px] absolute place-shadow"></canvas>
+
+    <div class="flex flex-row space-x-12 absolute top-[calc(50vh+285px)] left-0 w-full justify-center">
+        <button class="bg-white text-green font-serif text-2xl shadow-md px-4 py-2 rounded-full whitespace-pre disabled:bg-disabled disabled:text-slate-500"><i class="fa-solid fa-check"></i>  Break</button>
+        <button class="bg-white text-green font-serif text-2xl shadow-md px-4 py-2 rounded-full whitespace-pre disabled:bg-disabled disabled:text-slate-500"><i class="fa-solid fa-xmark"></i>  Cancel</button>
     </div>
-</body>
+    <img src="../assets/pixilpng.png" alt="" class="hidden">
+    </body>
 </html>
