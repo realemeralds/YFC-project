@@ -150,6 +150,8 @@ window.addEventListener("load", () => {
     console.log(localStorage.getItem('clearRectArray'))
     selectpos.x = undefined
     selectpos.y = undefined
+    breakButton.disabled = true
+    cancelButton.disabled = true
   })
   cancelButton.addEventListener("click", () => {
     selectpos.x = undefined
