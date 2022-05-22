@@ -1,7 +1,9 @@
 # YFC-project
 👋 youth for causes project 👋
 Will be using flask for online integration, but basic local functionality done already.
-non-minified css available at `src/output.css`
+> non-minified css available at `src/output.css`
+
+> website at: https://realemeralds.github.io/YFC-project/src/
 
 # TODO LIST 😞
 * remove placeholders and put in actual images
