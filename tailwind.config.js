@@ -5,7 +5,8 @@ module.exports = {
       fontFamily: {
         'cursive': ['AdelicaBrush', 'cursive'],
         'serif': ['Poppins', 'sans-serif'],
-        'garet': ['GaretBook', 'sans-serif']
+        'garet': ['GaretBook', 'sans-serif'],
+        'header': ['Akshar', 'sans-serif']
       },
       spacing: {
         '100': '400px',
