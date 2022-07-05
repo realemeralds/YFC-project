@@ -6,7 +6,8 @@ module.exports = {
         'cursive': ['AdelicaBrush', 'cursive'],
         'serif': ['Poppins', 'sans-serif'],
         'garet': ['GaretBook', 'sans-serif'],
-        'header': ['Akshar', 'sans-serif']
+        'header': ['Akshar', 'sans-serif'],
+        'navbar': ['Staatliches', 'cursive']
       },
       spacing: {
         '100': '400px',

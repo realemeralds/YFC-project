@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+  // Get elements
   const canvas = document.querySelectorAll("canvas")[1];
   const canvas2 = document.querySelectorAll("canvas")[0];
   const ctx = canvas.getContext("2d");
@@ -6,10 +7,11 @@ window.addEventListener("load", () => {
   var breakButton = document.querySelectorAll("button")[0];
   var cancelButton = document.querySelectorAll("button")[1];
 
+  // define stuff
   const size = 502;
   const pixelSize = 10;
   var image = new Image();
-  image.src = "../assets/pixilpng.png";
+  image.src = "../assets/placeholderCanvas.jpg"
   canvas.width = size;
   canvas.height = size;
   canvas2.width = size;
@@ -18,16 +20,31 @@ window.addEventListener("load", () => {
   breakButton.disabled = true;
   cancelButton.disabled = true;
 
+  // Mouse position
+  var pos = {
+    x: undefined,
+    y: undefined,
+  };
+  // Overlay square position
+  var overlaypos = {
+    x: undefined,
+    y: undefined,
+  };
+  // selected square position
+  var selectpos = {
+    x: undefined,
+    y: undefined,
+  };
+
+  // Get the stored values of clearRects.
   var clearRectArray = JSON.parse(localStorage.getItem("clearRectArray"));
   console.log(clearRectArray);
   clearRectArray ? () => {} : (clearRectArray = []);
 
-  // var clearRectArray = []
-
   // Create a grey box when mousing over boxes
   // @param x: center x-coord of pixel
   // @param y: center y-coord of pixel
-  var mouseoverElement = (x, y) => {
+  const mouseoverElement = (x, y) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "white";
     ctx.fillRect(1, 1, 501, 501);
@@ -41,27 +58,6 @@ window.addEventListener("load", () => {
         ctx.clearRect(clearRectCoords[0], clearRectCoords[1], 10, 10);
       }
     }
-    ctx.beginPath();
-    ctx.moveTo(x + 3, y);
-    ctx.lineTo(x, y);
-    ctx.lineTo(x, y + 3);
-    ctx.moveTo(x, y + 7);
-    ctx.lineTo(x, y + 10);
-    ctx.lineTo(x + 3, y + 10);
-    ctx.moveTo(x + 7, y + 10);
-    ctx.lineTo(x + 10, y + 10);
-    ctx.lineTo(x + 10, y + 7);
-    ctx.moveTo(x + 10, y + 3);
-    ctx.lineTo(x + 10, y);
-    ctx.lineTo(x + 7, y);
-    ctx.strokeStyle = "red";
-    ctx.lineWidth = 1;
-    ctx.stroke();
-  };
-
-  // create a red box after clicking on one
-  var selectElement = (x, y) => {
-    // Create a border of 1 px, length 2 px
     ctx.beginPath();
     ctx.moveTo(x + 3, y - 1);
     ctx.lineTo(x - 1, y - 1);
@@ -80,17 +76,25 @@ window.addEventListener("load", () => {
     ctx.stroke();
   };
 
-  var pos = {
-    x: undefined,
-    y: undefined,
-  };
-  var overlaypos = {
-    x: undefined,
-    y: undefined,
-  };
-  var selectpos = {
-    x: undefined,
-    y: undefined,
+  // create a red box after clicking on one
+  const selectElement = (x, y) => {
+    // Create a border of 1 px, length 2 px
+    ctx.beginPath();
+    ctx.moveTo(x + 3, y);
+    ctx.lineTo(x, y);
+    ctx.lineTo(x, y + 3);
+    ctx.moveTo(x, y + 7);
+    ctx.lineTo(x, y + 10);
+    ctx.lineTo(x + 3, y + 10);
+    ctx.moveTo(x + 7, y + 10);
+    ctx.lineTo(x + 10, y + 10);
+    ctx.lineTo(x + 10, y + 7);
+    ctx.moveTo(x + 10, y + 3);
+    ctx.lineTo(x + 10, y);
+    ctx.lineTo(x + 7, y);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 1;
+    ctx.stroke();
   };
 
   // Set offsets, change upon resize
@@ -100,6 +104,7 @@ window.addEventListener("load", () => {
     window.xOffset = (window.innerWidth - size) / 2;
     window.yOffset = (window.innerHeight - size) / 2 + 30;
   });
+
 
   function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect(), // abs. size of element
@@ -114,20 +119,15 @@ window.addEventListener("load", () => {
 
   // Change upon mouseover
   window.addEventListener("mousemove", (e) => {
-    var rect = canvas.getBoundingClientRect(), // abs. size of element
-      scaleX = canvas.width / rect.width, // relationship bitmap vs. element for x
-      scaleY = canvas.height / rect.height; // relationship bitmap vs. element for y
-
-    var x = (e.clientX - rect.left) * scaleX; // scale mouse coordinates after they have
-    var y = (e.clientY - rect.top) * scaleY; // been adjusted to be relative to element
+    const {x, y} = getMousePos(canvas, e)
 
     if (0 < x && x < canvas.width && 0 < y && y < canvas.height) {
       pos.x = x;
       pos.y = y;
-      overlaypos.x = pos.x - (pos.x % 10) + 1;
+      overlaypos.x = pos.x - (pos.x % 10) + 1; // +1 to compensate for padding
       overlaypos.y = pos.y - (pos.y % 10) + 1;
       mouseOnCanvas = true;
-      console.log(pos, overlaypos);
+      console.log(pos, overlaypos); // TODO: remove
     } else {
       pos.x = undefined;
       pos.y = undefined;
@@ -151,9 +151,9 @@ window.addEventListener("load", () => {
 
   // Paint a white background
   ctx2.fillStyle = "white";
-  ctx2.drawImage(image, 1, 1, 501, 501);
+  ctx2.drawImage(image, 1, 1, 500, 500);
   ctx.fillStyle = "white";
-  ctx.fillRect(1, 1, 501, 501);
+  ctx.fillRect(0, 0, 502, 502);
 
   breakButton.addEventListener("click", () => {
     clearRectArray.push([selectpos.x, selectpos.y]);

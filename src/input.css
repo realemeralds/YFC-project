@@ -13,7 +13,6 @@
         src: url("../fonts/Garet-Book.ttf")
     }
 
-
     .place-shadow {
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
@@ -28,10 +27,10 @@
         background-color: #475569;
         left: 20px;
     }
-    .transition-right {
+    .line-transition-right {
         transition: left 500ms cubic-bezier(.5,1,.88,1.04) 50ms, right 500ms cubic-bezier(.5,1,.88,1.04);
     }
-    .transition-left {
+    .line-transition-left {
         transition: left 500ms cubic-bezier(.5,1,.88,1.04), right 500ms cubic-bezier(.5,1,.88,1.04) 50ms;
     }
 
